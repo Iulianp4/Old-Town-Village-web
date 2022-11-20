@@ -1,0 +1,333 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #d6d8e7;
+}
+
+html {
+  /* monospace = same size of characters and same spacing between each char (and word)*/
+  /* sans serif = removes the ticks at the end of each char */
+  font-family: 'Montserrat', sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #010409;
+}
+
+header {
+  background: #161b22;
+  /* padding-top: 10px;
+  padding-right: 14px;
+  padding-bottom: 10px;
+  padding-left: 14px; */
+  padding: 10px 16px;
+  box-shadow: 0 0 28px -10px #939aff;
+}
+
+h1,
+h2 {
+  margin-bottom: 16px;
+}
+
+p {
+  margin-bottom: 10px;
+}
+
+.container {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.main {
+  margin-top: 100px;
+  margin-bottom: 200px;
+}
+
+/* 
+  . = clasa
+  # = id
+  nimic = tag (ex: div, span, head)
+  : = efect asupra elementului
+  :: = pseudoelement (ex: before/after)
+*/
+
+a {
+  text-decoration: none;
+  color: #d6d8e7;
+  font-weight: 600;
+}
+
+a:hover {
+  color: #939aff;
+}
+
+.logo {
+  font-size: 26px;
+  font-weight: 600;
+  transition-duration: .2s;
+  transition-property: color, margin;
+}
+
+.logo:hover {
+  margin-left: 8px;
+}
+
+.header-container {
+  display: flex;
+  /* pe oY (verticala) */
+  align-items: center;
+  /* pe Ox (orizontala) */
+  justify-content: space-between;
+}
+
+.navigation ul {
+  list-style-type: none;
+}
+
+.navigation li {
+  display: inline;
+  margin-left: 26px;
+}
+
+.navigation a {
+  transition: .2s color;
+}
+
+form {
+  background: #161b22;
+  padding: 16px;
+  width: 400px;
+  border-top: 1px solid #939aff ;
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  margin-top: 14px;
+}
+
+input,
+textarea,
+select {
+  background: #0d1117;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 14px;
+  transition: .2s;
+  border-bottom: 1px solid transparent;
+  width: 100%;
+}
+
+input:focus,
+textarea:focus {
+  border-color:#939aff ;
+  outline: none;
+}
+
+button {
+  padding:  8px 28px;
+  background: #0d1117;
+  border: none;
+  font-weight: 600;
+  font-size: 16px;
+  font-family: inherit;
+  cursor: pointer;
+  transition: .2s color;
+  border-radius: 4px;
+}
+
+button:hover {
+  color: #939aff;
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.content form {
+  margin-left: 48px;
+  width: 600px;
+}
+
+footer {
+  margin-bottom: 120px;
+
+}
+.input-group {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 14px;
+}
+
+input[type="checkbox"] {
+  width: auto;
+  margin-right: 10px;
+}
+
+/* 
+  + = primul frate de dupa element
+  ~ = toti fratii de dupa element
+*/
+
+input[type="checkbox"] + label {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.button-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 28px;
+}
+
+.button-social {
+  display: flex;
+  justify-content: center;
+}
+
+.button-social a {
+  background: #0d1117;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 8px;
+}
+
+.button-social a i {
+  transition: .2s color;
+}
+
+.button-social a:hover i {
+  color: #939aff;
+}
+
+.divider {
+  margin: 20px 0;
+  text-align: center;
+  position: relative;
+}
+
+.divider::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  height: 1px;
+  width: 100%;
+  background: #d6d8e7;
+  background-image: linear-gradient(
+    to right,
+    #161b22,
+    #d6d8e7,
+    #161b22
+  );
+}
+
+.divider span {
+  background: #161b22;
+  padding: 10px;
+  z-index: 2;
+  position: relative;
+}
+
+iframe {
+  width: 100%;
+  margin-top: 34px;
+  margin-bottom: 34px;
+}
+
+.gallery {
+  margin-bottom: 44px;
+}
+
+.gallery .list {
+  display: none;
+  column-gap: 16px;
+  position: relative;
+}
+
+.gallery .list.show {
+  display: flex;
+  animation: .4s verticalGlide;
+}
+
+.gallery .list.show img {
+  animation: .4s grow;
+}
+
+.gallery img {
+  width: 33.33%;
+  height: 385px;
+  object-fit: cover;
+}
+
+.gallery .button-group {
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.gallery button {
+  border-bottom: 1px solid transparent;
+  transition: .2s border-color;
+}
+
+.gallery button.show {
+  border-color: #939aff;
+}
+
+/* how to create animations */
+@keyframes verticalGlide {
+  from {
+    opacity: 0;
+    bottom: -50px;
+  }
+
+  to {
+    opacity: 1;
+    bottom: 0px;
+  }
+}
+
+@keyframes grow {
+  from {
+    transform: scale(0);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
+
+.back-top {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  background: #161b22;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 10px 0 black;
+  padding: 30px;
+}
+
+.back-top i {
+  transition: .2s;
+}
+
+.back-top:hover i {
+  color: #939aff;
+}
